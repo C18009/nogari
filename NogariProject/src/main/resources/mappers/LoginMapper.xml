@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTO Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="nogari.loginrestapi.service.impl.LoginMapper">
+   
+    <select id="selectEmpList" parameterType="nogari.loginrestapi.vo.LoginVo" resultType="nogari.loginrestapi.vo.LoginVo">
+        /* queryId = selectEmpList */
+        SELECT * 
+          FROM USER_INFO_MDJ
+         WHERE 1=1
+        <if test="id!= null and id!=''">
+           AND ID = #{id}
+        </if>
+    </select>
+
+    <select id="selectCountEmp" parameterType="nogari.loginrestapi.vo.LoginVo" resultType="int">
+        /* queryId = selectCountEmp */
+        SELECT COUNT(*) AS CNT 
+          FROM USER_INFO_MDJ
+         WHERE ID = #{id}
+    </select>
+
+    <select id="selectCountEmpPw" parameterType="nogari.loginrestapi.vo.LoginVo" resultType="int">
+        /* queryId = selectCountEmpPw */
+        SELECT COUNT(*) AS CNT 
+          FROM USER_INFO_MDJ
+         WHERE ID = #{id}
+           AND PW = #{pw}
+    </select>
+
+    <update id="updateFalieCnt" parameterType="nogari.loginrestapi.vo.LoginVo">
+        /* queryId = updateFalieCnt */
+        UPDATE USER_INFO_MDJ
+           SET FAIL_CNT = #{failCnt}
+         WHERE ID = #{id}
+           AND USE_YN = 'Y'
+    </update>
+
+    <select id="updateLoginUseYn" parameterType="nogari.loginrestapi.vo.LoginVo">
+        /* queryId = updateLoginUseYn */
+        UPDATE USER_INFO_MDJ
+           SET USE_YN = #{useYn}
+         WHERE ID = #{id}
+    </select>
+    
+    
+    
+</mapper>

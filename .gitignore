@@ -117,3 +117,7 @@ NogariProject/src/.DS_Store
 
 # Oracle Cloud DB
 NogariProject/src/main/resources/Wallet_nogariDB/
+
+#project info
+NogariProject/.project
+NogariProject/.classpath

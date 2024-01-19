@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTO Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="nogari.usermngrestapi.service.impl.UserMngMapper">
+   
+    <insert id="insertUserMng" parameterType="nogari.usermngrestapi.vo.UserMngVo">
+        /* query Id = insertUserMng */
+        INSERT INTO 
+        USER_INFO_MDJ( ID
+                , PW
+                , NAME
+                , NICKNAME
+                , AGE
+                , ADDRESS
+                , EMAIL
+                , USE_YN
+                , FAIL_CNT
+        )VALUES(
+         #{id}
+        ,#{pw}
+        ,#{name}
+        ,#{nickname}
+        ,#{age}
+        ,#{address}
+        ,#{email}
+        ,#{useYn}
+        ,#{failCnt}
+        )
+    </insert>
+
+    <update id="updateUserMng" parameterType="nogari.usermngrestapi.vo.UserMngVo">
+         /* query Id = updateUserMng */
+        UPDATE USER_INFO_MDJ 
+           SET NAME     = #{name}
+             , NICKNAME = #{nickname}
+             , AGE      = #{age}
+             , ADDRESS  = #{address}
+             , EMAIL    = #{email}
+             , USE_YN   = #{useYn}
+             , FAIL_CNT  = #{failCnt}
+        WHERE ID = #{id}
+          AND PW = #{pw}
+    </update>
+    
+    <update id="updateUserMngDelYn" parameterType="nogari.usermngrestapi.vo.UserMngVo">
+         /* query Id = updateUserMngDelYn */
+          UPDATE USER_INFO_MDJ 
+             SET USE_YN   = #{useYn}
+           WHERE ID       = #{id}
+    </update>
+
+    <update id="deleteUserMngDel" parameterType="nogari.usermngrestapi.vo.UserMngVo">
+         /* query Id = deleteUserMngDel */
+          DELETE USER_INFO_MDJ 
+           WHERE ID       = #{id}
+    </update>
+</mapper>
