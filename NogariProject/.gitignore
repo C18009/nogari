@@ -15,7 +15,6 @@ local.properties
 .loadpath
 .recommenders
 
-
 # External tool builders
 .externalToolBuilders/
 
@@ -119,7 +118,7 @@ src/.DS_Store
 
 
 # Oracle Cloud DB
-src/main/resources/Wallet_nogariDB/
-src/main/resources/application.properties
-src/main/resources/rebel.xml
+.src/main/resources/Wallet_nogariDB/
+.src/main/resources/application.properties
+.src/main/resources/rebel.xml
 /spring-boot-complete.iml

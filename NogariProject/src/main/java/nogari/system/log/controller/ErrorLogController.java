@@ -34,7 +34,7 @@ public class ErrorLogController {
 
  /**/
     @PostMapping("/errlogs")
-    public ErrorLogDTO errLogSave(@Valid @RequestBody ErrorLogDTO paramDto ) throws Exception{ //저장
+    public ErrorLogDTO errLogSave(@Valid @RequestBody ErrorLogDTO paramDto ) { //저장
         ErrorLogDTO rsltDto = errorLogService.errLogSave(paramDto);
         return rsltDto;
     }

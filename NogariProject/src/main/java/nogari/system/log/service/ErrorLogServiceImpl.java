@@ -25,7 +25,7 @@ public class ErrorLogServiceImpl implements ErrorLogService {
 
 
     @Override
-    public ErrorLogDTO errLogSave(ErrorLogDTO paramDto) throws Exception {
+    public ErrorLogDTO errLogSave(ErrorLogDTO paramDto) {
 
         int insCnt = errlogMapper.insertErrorLog(paramDto);
 
